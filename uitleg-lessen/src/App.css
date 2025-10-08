@@ -1,0 +1,9 @@
+.book-container {
+    background-color: grey;
+ 
+    display: flex;
+}
+
+.img {
+    width: 30vw;
+}
