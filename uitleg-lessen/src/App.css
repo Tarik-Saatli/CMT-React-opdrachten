@@ -7,3 +7,19 @@
 .img {
     width: 30vw;
 }
+.nav{
+    background-color: black;
+    color: white;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.Layout-container {
+    width: 80vw;
+    margin: 0 auto;
+}
