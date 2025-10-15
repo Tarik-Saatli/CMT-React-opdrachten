@@ -1,42 +1,115 @@
-#root {
-  max-width: 1280px;
+/* Algemene opmaak */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #b6b6b6;
+  color: #333;
+  margin: 0;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+/* Container voor het hele menu */
+.menu-container {
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1{
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Elke menu-kaart */
+.menu-item {
+  display: flex;
+  background-color: #dfdfdf;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Afbeelding van het gerecht */
+.menu-item img {
+  width: 120px; /* kleiner dan eerder */
+  height: 120px;
+  object-fit: cover;
+  border-right: 2px solid #f4b400;
+  flex-shrink: 0;
+}
+
+/* Tekstgedeelte naast afbeelding */
+.menu-info {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Titel en prijs op één lijn */
+.title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+/* Titel */
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+/* Prijs */
+.menu-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e09f3e;
+  margin: 0;
+}
+
+/* Beschrijving */
+.menu-desc {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-item img {
+    width: 80px;
+    height: 80px;
+    border-right: none;
+    border-bottom: 2px solid #f4b400;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .menu-info {
+    padding: 0.8rem 1rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .title-price {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+  }
 }
