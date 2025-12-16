@@ -1,13 +1,26 @@
+/* =====================
+   LAYOUT
+===================== */
+
 .book-container {
     background-color: grey;
- 
     display: flex;
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.img {
-    width: 30vw;
+.Layout-container {
+    width: 80vw;
+    margin: 0 auto;
 }
-.nav{
+
+/* =====================
+   NAV
+===================== */
+
+.nav {
     background-color: black;
     color: white;
 }
@@ -19,7 +32,81 @@
     padding: 20px;
 }
 
-.Layout-container {
-    width: 80vw;
-    margin: 0 auto;
+/* =====================
+   BOOK CARD
+===================== */
+
+.book {
+    width: 300px;              /* vaste kaartbreedte */
+    height: 450px;             /* vaste kaarthoogte */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.book-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* flip */
+.book.flipped .book-inner {
+    transform: rotateY(180deg);
+}
+
+/* front & back */
+.book-front,
+.book-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;          /* voorkomt image overflow */
+}
+
+/* =====================
+   FRONT
+===================== */
+
+.book-front {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* IMAGE */
+.img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;         /* image blijft netjes */
+    border-radius: 8px;
+}
+
+/* =====================
+   BACK
+===================== */
+
+.book-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-back h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #4a90e2;
+}
+
+.book-back p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #333;
 }

@@ -66,7 +66,7 @@ const BookList = () => {
             </option>
           ))}
         </select>
-      
+
       </div>
       <BookCounter
         aantal={books.length} />
@@ -77,7 +77,10 @@ const BookList = () => {
           title={book.title}
           author={book.author}
           image={book.image}
-          category={book.category} />
+          category={book.category}
+          description={book.description}
+          year={book.year}
+          pages={book.pages} />
 
 
       ))}
